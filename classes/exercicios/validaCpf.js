@@ -31,7 +31,7 @@ class ValidaCpf {
         const digito1 = ValidaCpf.geraDigito(cpfSemDigito);
         const digito2 = ValidaCpf.geraDigito(cpfSemDigito + digito1);
 
-        this.novoCpf = cpfSemDigito + digito1 + digito2;
+        return cpfSemDigito + digito1 + digito2;
     }
 
     valida() {
@@ -40,9 +40,9 @@ class ValidaCpf {
         if(this.cpfLimpo.length !== 11) return false;
         if(this.isSequence()) return false;
         
-        this.geraNovoCpf()
+        
 
-        return this.novoCpf === this.cpfLimpo;
+        return this.geraNovoCpf() === this.cpfLimpo;
     }
 
 }
