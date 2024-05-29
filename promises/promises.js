@@ -7,6 +7,8 @@ function aleatorio(min, max) {
 
 function esperaAi(msg, time) {
     return new Promise((resolve, reject) => {
+        if (typeof msg !== 'string') reject('ERRO: bad value');
+
         setTimeout(() => {
             resolve(msg);
         }, time)
@@ -15,17 +17,23 @@ function esperaAi(msg, time) {
 
 }
 
-esperaAi('Frase 1', aleatorio(1, 3))
+esperaAi('conexão com BD', aleatorio(1, 3))
     .then(resolve => {
         console.log(resolve);
-        return esperaAi('frase 2', aleatorio(1, 3));
+        return esperaAi('Buscando no BD', aleatorio(1, 3));
     })
     .then(resolve => {
         console.log(resolve);
-        return esperaAi('frase 3', aleatorio(1, 3));
+        return esperaAi('Trata dados do BD', aleatorio(1, 3));
+    })
+    .then(resolve => {
+        console.log(resolve);
+        return esperaAi('Exibe dados na tela', 1000);
     })
     .then(resolve => {
         console.log(resolve);
     })
-    .catch();
+    .catch(reject => {
+        console.log(reject);
+    });
 
