@@ -7,33 +7,28 @@ function aleatorio(min, max) {
 
 function esperaAi(msg, time) {
     return new Promise((resolve, reject) => {
-        if (typeof msg !== 'string') reject('ERRO: bad value');
+        if (typeof msg !== 'string') reject(false);
 
         setTimeout(() => {
-            resolve(msg);
+            resolve(msg)
         }, time)
     });
 
 
 }
 
-esperaAi('conexão com BD', aleatorio(1, 3))
+esperaAi('conectando', aleatorio(1, 5))
     .then(resolve => {
         console.log(resolve);
-        return esperaAi('Buscando no BD', aleatorio(1, 3));
+        return esperaAi('Tratando', aleatorio(1, 5));
     })
     .then(resolve => {
         console.log(resolve);
-        return esperaAi('Trata dados do BD', aleatorio(1, 3));
-    })
-    .then(resolve => {
-        console.log(resolve);
-        return esperaAi('Exibe dados na tela', 1000);
+        return esperaAi('mostra na tela', aleatorio(1, 5));
     })
     .then(resolve => {
         console.log(resolve);
     })
     .catch(reject => {
-        console.log(reject);
-    });
-
+        console.log('ERRO: ' + reject)
+    })
