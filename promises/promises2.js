@@ -8,7 +8,7 @@ function aleatorio(min, max) {
 function esperaAi(msg, time) {
     return new Promise((resolve, reject) => {
         if (typeof msg !== 'string') {
-            reject(false);
+            reject('CAI NO ERRO');
             return;
         };
 
