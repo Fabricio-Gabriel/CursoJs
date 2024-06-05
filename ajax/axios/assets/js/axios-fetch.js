@@ -1,9 +1,12 @@
-fetch('pessoas.json')
-    .then(resolve => resolve.json())
-    .then(json => {
-        carregaElementos(json);
-    })
-    .catch(error => console.log(error));
+// fetch('pessoas.json')
+//     .then(resolve => resolve.json())
+//     .then(json => {
+//         carregaElementos(json);
+//     })
+//     .catch(error => console.log(error));
+
+axios('pessoas.json')
+    .then(resolve => carregaElementos(resolve.data));
 
 function carregaElementos(json) {
     const resultado = document.querySelector('.resultado');
