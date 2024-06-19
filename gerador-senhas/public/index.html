@@ -8,7 +8,26 @@
 </head>
 <body>
     <section class="container">
-        <h1>Lorem ipsum dolor sit amet</h1>
+        <h1>Gerador de senhas</h1>
+
+        <div class="senha-gerada">
+            Selecione as opções
+        </div><br>
+
+        <label for="inumber">Quantidade de caracteres <input type="number" name="qtd-caracteres" id="inumber" min="1" max="50" class="qtd-caracter" value="8"></label><br>
+
+        <p>Adicionar maiúsculas <input type="checkbox" class="chk-maiusculas" checked></p>
+
+        <p>Adicionar minúsculas  <input type="checkbox" class="chk-minusculas" checked></p>
+
+        <p>Adicionar números <input type="checkbox" class="chk-numeros"></p>
+
+        <p>Adicionar simbolos <input type="checkbox" class="chk-simbolos"></p>
+
+        <button class="gerar-senha">
+            Gerar senha
+        </button>
+        
     </section>
     <script src="./assets/js/bundle.js"></script>
 </body>
