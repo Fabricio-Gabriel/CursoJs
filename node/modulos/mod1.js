@@ -1,12 +1,18 @@
-const nome = 'Fabricio';
-const sobreNome = 'Gabriel';
+class Pessoa {
+    constructor(nome) {
+        this.nome = nome;
+    }
+}
 
-const falaNome = () => {
-    console.log(nome, sobreNome);
-};
+exports.Pessoa = Pessoa;
 
-exports.nome = nome;
+let nome = 'Fabrico';
+let sobreNome = 'Gabriel'
+function falNome() {
+    console.log('a');
+}
+
 exports.sobreNome = sobreNome;
-exports.falaNome = falaNome;
+exports.nome = nome;
+exports.falNome = falNome;
 
-console.log(exports);
