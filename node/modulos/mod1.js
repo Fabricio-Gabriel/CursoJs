@@ -30,3 +30,5 @@ module.exports = class Cachorro {
         console.log(`${this.nome} está latindo`);
     }
 }
+
+console.log(module);
