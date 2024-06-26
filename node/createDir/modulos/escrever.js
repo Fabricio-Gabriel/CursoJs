@@ -1,5 +1,5 @@
 const fs = require('fs').promises;
-const path = require('path');
-const caminhoArquivo = path.resolve(__dirname, '..', 'teste.txt');
 
-fs.writeFile(caminhoArquivo, 'Frase1\n', { flag: 'a', encoding: 'utf8' } );
+module.exports = (caminho, dados) => {
+    fs.writeFile(caminho, dados, { flag: 'w', encoding: 'utf8' } );
+};
