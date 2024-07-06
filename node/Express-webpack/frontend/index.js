@@ -12,6 +12,8 @@
 // const p1 = new Pessoa('Fabricio', 'Gabriel');
 // console.log(soma(2, 1));
 // alert(p1.nome);
+"use strict"
+
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
