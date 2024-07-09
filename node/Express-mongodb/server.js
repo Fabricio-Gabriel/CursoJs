@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 
 mongoose.connect(process.env.CONNECTIONSTRING)
     .then(() => {
-        console.log('Conectei na base de dados');
        app.emit('Conexão estabelecida!');
     })
     .catch(error => console.log(error));

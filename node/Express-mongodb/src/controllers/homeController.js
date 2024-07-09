@@ -1,3 +1,16 @@
+const HomeModel = require('../models/homeModel.js');
+
+HomeModel.create({
+    title: 'Outro titulo',
+    description: 'Uma descrição de testes'
+})
+    .then(dados => console.log(dados))
+    .catch(error => console.log(error));
+
+HomeModel.find()
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
+
 exports.paginaInicial = (req, res) => {
     res.render('index');
     return;
