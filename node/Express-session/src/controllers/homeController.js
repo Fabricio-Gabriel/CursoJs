@@ -12,6 +12,8 @@ HomeModel.find()
     .catch(error => console.log(error));
 
 exports.paginaInicial = (req, res) => {
+    // req.session.usuario = { nome: 'Fabricio', logado: true }
+    console.log(req.flash('arroz'));
     res.render('index');
     return;
 };
