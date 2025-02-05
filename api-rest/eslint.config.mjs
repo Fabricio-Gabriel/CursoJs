@@ -7,7 +7,8 @@ export default [
   {
     languageOptions: { globals: globals.node },
     rules: {
-      "class-methods-use-this": "off"
+      "class-methods-use-this": "off",
+      "no-unused-vars": "off"
     }
   },
   pluginJs.configs.recommended,
