@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import UserController from '../controllers/UserController';
+import loginRequired from '../middlewares/loginRequired';
 
 const router = new Router();
 
@@ -7,7 +8,7 @@ const router = new Router();
 router.post('/', UserController.create);
 
 // ROTA READ USERS
-router.get('/', UserController.index);
+router.get('/', loginRequired, UserController.index);
 
 // ROTA SHOW USER
 router.get('/:id', UserController.show);

@@ -16,6 +16,9 @@ class UserController {
   //index
   async index(req, res) {
     try {
+      console.log('userID: ', req.userId);
+      console.log('userEmail: ', req.userEmail);
+
       const users = await User.findAll();
       return res.json(users);
     } catch (error) {

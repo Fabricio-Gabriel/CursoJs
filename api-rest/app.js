@@ -6,7 +6,7 @@ import './src/database';
 import express from 'express';
 import homeRoutes from './src/routes/homeRoutes';
 import userRoutes from './src/routes/UserRoutes';
-import TokenRoutes from './src/routes/TokenRoutes'
+import TokenRoutes from './src/routes/TokenRoutes';
 
 class App {
   constructor() {
