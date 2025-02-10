@@ -5,11 +5,11 @@ import loginRequired from '../middlewares/loginRequired';
 const router = new Router();
 
 
-// ROTA READ USERS 
+// ROTA READ USERS
 router.get('/', loginRequired, UserController.index);
 
 // ROTA SHOW USER
-router.get('/:id', UserController.show);
+// router.get('/:id', UserController.show);
 
 
 // ROTA CREATE USERS
