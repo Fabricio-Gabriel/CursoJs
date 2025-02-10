@@ -5,7 +5,8 @@ class UserController {
   async create(req, res) {
     try {
       const novoUser = await User.create(req.body);
-      return res.json(novoUser);
+      const { id, nome, email } = novoUser;
+      return res.json({ id, nome, email });
     } catch(e) {
       return res.status(400).json({
         errors: e.errors.map(err => err.message)
@@ -51,7 +52,8 @@ class UserController {
       }
 
       const novosDados = await user.update(req.body);
-      return res.json(novosDados);
+      const { id, nome, email } = novosDados;
+      return res.json({ id, nome, email });
 
     } catch (error) {
       return res.status(400).json({
@@ -63,13 +65,7 @@ class UserController {
   //delete
   async delete(req, res) {
     try {
-      if(!req.params.id) {
-        return res.status(400).json({
-          errors: ['Este id não existe']
-        });
-      }
-
-      const user = await User.findByPk(req.params.id);
+      const user = await User.findByPk(req.userId);
 
       if(!user) {
         return res.status(400).json({
@@ -77,8 +73,8 @@ class UserController {
         });
       }
 
-      const deletaUser = await user.destroy();
-      return res.json(deletaUser);
+      await user.destroy();
+      return res.json(null);
     } catch (error) {
       return res.status(400).json({
         errors: error.errors.map(err => err.message)
