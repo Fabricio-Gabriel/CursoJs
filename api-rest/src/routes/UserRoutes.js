@@ -4,20 +4,22 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = new Router();
 
-// ROTA CREATE USERS
-router.post('/', UserController.create);
 
-// ROTA READ USERS
+// ROTA READ USERS 
 router.get('/', loginRequired, UserController.index);
 
 // ROTA SHOW USER
 router.get('/:id', UserController.show);
 
+
+// ROTA CREATE USERS
+router.post('/', UserController.create);
+
 // ROTA UPDATE USERS
-router.put('/:id', UserController.update);
+router.put('/', loginRequired, UserController.update);
 
 // ROTA DELETE USERS
-router.delete('/:id', UserController.delete);
+router.delete('/', loginRequired, UserController.delete);
 
 
 export default router;
